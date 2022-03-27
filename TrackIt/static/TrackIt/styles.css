@@ -1,0 +1,58 @@
+body {
+    background-color: #151515;
+    color: #eee;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item {
+    color: #dfdfdf !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.nav-link {
+    display: inline;
+}
+
+.logo-text {
+    color: #eee !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login, .register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    color: #dfdfdf;
+}
+
+.form-login .form-group input, .form-register .form-group input {
+    border: 1px solid black;
+    caret-color: #aaa;
+    color: #ccc;
+}
+
+@media (min-width: 1000px) {
+    .navbar {
+        padding: 8px 20px;
+    }
+    .logo-text {
+        font-size: x-large !important;
+    }
+    .nav-item {
+        font-size: large;
+    }
+
+    .login, .register {
+        padding: 25px 50px;
+    }
+}
