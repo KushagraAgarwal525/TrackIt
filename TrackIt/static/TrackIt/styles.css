@@ -28,7 +28,6 @@ body {
 
 a:hover {
     text-decoration: none;
-    cursor: pointer;
 }
 
 .nav-link {
@@ -48,15 +47,6 @@ a:hover {
     gap: 20px;
     color: #dfdfdf;
     padding: 15px 40px;
-    display: none;
-}
-
-.login-redirect-link, .register-redirect-link {
-    color: #007bff !important;
-}
-
-.login-redirect-link:hover, .register-redirect-link:hover {
-    color: #0056b3 !important;
 }
 
 .form-login .form-group input, .form-register .form-group input {

@@ -1,53 +1,6 @@
 {% extends 'TrackIt/layout.html' %}
 
 {% block body %}
-    <!-- login page -->
-    <div class="login">
-        <h2>Login</h2>
-
-        {% if message %}
-            <div>{{ message }}</div>
-        {% endif %}
-
-        <form class="form-login" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <input autofocus class="form-control bg-dark" type="email" name="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <input class="form-control bg-dark" type="password" name="password" placeholder="Password">
-            </div>
-            <input class="btn btn-dark" type="submit" value="Login">
-        </form>
-
-        <div>Don't have an account? <a class="register-redirect-link">Register here.</a></div>
-    </div>
-
-    <!-- Register page -->
-    <div class="register">
-        <h2>Register</h2>
-
-        {% if message %}
-            <div>{{ message }}</div>
-        {% endif %}
-
-        <form class="form-register" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <input class="form-control bg-dark" type="email" name="email" placeholder="Email Address">
-            </div>
-            <div class="form-group">
-                <input class="form-control bg-dark" type="password" name="password" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <input class="form-control bg-dark" type="password" name="confirmation" placeholder="Confirm Password">
-            </div>
-            <input class="btn btn-dark" type="submit" value="Register">
-        </form>
-
-        <div>Already have an account? <a class="login-redirect-link">Log In here.</a></div>
-    </div>
-
     <!-- price display page -->
     <div class="prices">
         <!-- popular CryptoCurrency price block -->

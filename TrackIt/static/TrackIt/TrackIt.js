@@ -1,6 +1,6 @@
 // Use https://tvjs.io/ for graphs
 
-// ***--set update intervals for cryptocurrency prices--***
+// ***----Update intervals for cryptocurrency prices----***
 
 setInterval(() => {
     updateCryptoPrice("BTC", "USD");
@@ -19,8 +19,6 @@ setInterval(() => {
 }, 1000);
 
 // ***--------------------------------------------------***
-
-// ***-----set update intervals for currency prices-----***
 
 setInterval(() => {
     updateCurrencyPrice("USD", "USD");
@@ -38,8 +36,6 @@ setInterval(() => {
     updateCurrencyPrice("CHF", "USD");
 }, 1000);
 
-// ***--------------------------------------------------***
-
 let cryptoPrices = {"BTC": 0, "ETH": 0, "SOL": 0, "AVAX": 0, "ADA": 0};
 let currencyPrices = {"USD": 0, "EUR": 0, "JPY": 0, "GBP": 0, "CHF" : 0};
 
@@ -50,38 +46,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateCryptoPrice("ETH", "USD");
     updateCryptoPrice("SOL", "USD");
     updateCryptoPrice("AVAX", "USD");
-    updateCryptoPrice("ADA", "USD");
+    // updateCryptoPrice("ADA", "USD");
 	updateCurrencyPrice("USD", "USD");
 	updateCurrencyPrice("EUR", "USD");
-	updateCurrencyPrice("JPY", "USD");
-	updateCurrencyPrice("GBP", "USD");
-	updateCurrencyPrice("CHF", "USD");
-
-	document.querySelector(".login-link").addEventListener("click", () => {
-		document.querySelector(".register").style.display = "none";
-		document.querySelector(".login").style.display = "block";
-		document.querySelector(".prices").style.display = "none";	
-	})
-	document.querySelector(".register-link").addEventListener("click", () => {
-		document.querySelector(".login").style.display = "none";
-		document.querySelector(".register").style.display = "block";
-		document.querySelector(".prices").style.display = "none";	
-	})
-	document.querySelector(".logo-text").addEventListener("click", () => {
-		document.querySelector(".register").style.display = "none";
-		document.querySelector(".prices").style.display = "flex";
-		document.querySelector(".login").style.display = "none";
-	})
-	document.querySelector(".register-redirect-link").addEventListener("click", () => {
-		document.querySelector(".login").style.display = "none";
-		document.querySelector(".register").style.display = "block";
-		document.querySelector(".prices").style.display = "none";	
-	})
-	document.querySelector(".login-redirect-link").addEventListener("click", () => {
-		document.querySelector(".login").style.display = "block";
-		document.querySelector(".register").style.display = "none";
-		document.querySelector(".prices").style.display = "none";	
-	})
+	// updateCurrencyPrice("JPY", "USD");
+	// updateCurrencyPrice("USD", "USD");
+	// updateCurrencyPrice("USD", "USD");
 })
 
 async function getCryptoPrice(crypto, currency) {

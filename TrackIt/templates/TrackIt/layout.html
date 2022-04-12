@@ -15,11 +15,13 @@
 <body>
     <nav class="sticky-top navbar navbar-dark bg-dark">
         <div class="nav-left">
-            <a class="nav-item navbar-text logo-text">TrackIt</a>
+            <a href="/" class="nav-item navbar-text logo-text">TrackIt</a>
         </div>
         <div class="nav-right">
-            <a class="nav-item nav-link register-link">Register</a>
-            <a class="nav-item nav-link login-link">Login</a>
+            <a href="/register"class="nav-item nav-link">
+                Register
+            </a>
+            <a href="/login" class="nav-item nav-link">Login</a>
         </div>
     </nav>
     {% block body %} {% endblock %}
