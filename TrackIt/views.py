@@ -86,3 +86,8 @@ def preference(request):
         return JsonResponse({"status": 0, "currency": pref.currency})
     except:
         return JsonResponse({"status": 1, "currency": "USD"})
+
+def is_logged_in(request):
+    if request.user.is_authenticated:
+        return JsonResponse({"status": 0})
+    return JsonResponse({"status": 1})

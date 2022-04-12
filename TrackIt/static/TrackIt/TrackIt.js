@@ -32,6 +32,15 @@ function resetLocalPrices() {
     sessionStorage.setItem("currencyPrices", JSON.stringify(currencyPrices));
 }
 
+async function isLoggedIn() {
+    const loggedIn = await fetch("/isloggedin");
+    const loggedInJson = await loggedIn.json();
+    if (loggedInJson.status === 0) {
+        return true;
+    }
+    return false;
+}
+
 async function updateAllPrices(preference) {
     updateCryptoPrice("BTC", preference);
     updateCryptoPrice("ETH", preference);
@@ -105,18 +114,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         idea = await idea.json();
         document.querySelector('.idea').textContent = idea.activity;
     })
-
     const dropdownMenu = document.querySelector(".dropdown-menu");
-    currencies.forEach(currency => {
-        const li = document.createElement('li');
-        const btn = document.createElement('button')
-        btn.textContent = currency;
-        btn.classList.add('dropdown-item');
-        btn.dataset["currency"] = currency;
-        btn.addEventListener('click', () => updatePreference(currency));
-        li.appendChild(btn);
-        dropdownMenu.appendChild(li);
-    })
+    if (await isLoggedIn()) {
+        currencies.forEach(currency => {
+            const li = document.createElement('li');
+            const btn = document.createElement('button')
+            btn.textContent = currency;
+            btn.classList.add('dropdown-item');
+            btn.dataset["currency"] = currency;
+            btn.addEventListener('click', () => updatePreference(currency));
+            li.appendChild(btn);
+            dropdownMenu.appendChild(li);
+            })
+    }
 })
 
 async function getCryptoPrice(crypto, currency) {
