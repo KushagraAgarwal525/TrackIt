@@ -79,3 +79,4 @@ Run ***python <span>manage.py</span> runserver*** while in the root directory wh
 - The prices are updated every second
 - The prices start updating after the site is first loaded by the user hence, the price change percentage is 0.000% when the site first loads
 - *Change percentages* are with respect to the last price change detected
+- *Login* and *Register* are not asynchronous
