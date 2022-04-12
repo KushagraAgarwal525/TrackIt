@@ -4,7 +4,6 @@
     --solana-color : #DC1FFF;
     --avalanche-color : #e84142;
     --cardano-color : #00A1FF;
-    /* #2a71d0 */
 }
 
 body {
@@ -24,6 +23,7 @@ body {
 
 a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-link {
@@ -43,6 +43,15 @@ a:hover {
     gap: 20px;
     color: #dfdfdf;
     padding: 15px 40px;
+    display: none;
+}
+
+.login-redirect-link, .register-redirect-link {
+    color: #007bff !important;
+}
+
+.login-redirect-link:hover, .register-redirect-link:hover {
+    color: #0056b3 !important;
 }
 
 .form-login .form-group input, .form-register .form-group input {
