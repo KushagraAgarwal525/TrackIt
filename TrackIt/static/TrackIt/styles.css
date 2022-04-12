@@ -221,12 +221,6 @@ a:hover {
     text-align: center;
 }
 
-.getidea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .relax {
     display: flex;
     flex-direction: column;
@@ -257,6 +251,71 @@ a:hover {
 
 .idea {
     font-size: 1.1rem;
+}
+
+/* Override some bootstrap properties */
+
+.btn-prefer.btn-preferences.focus,.btn-preferences:focus,.btn-preferences.click,.btn-preferences {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: unset;
+    transition: unset;
+    outline: none;
+}
+
+.btn-preferences {
+    vertical-align: unset;
+    user-select: unset;
+}
+
+.btn-preferences:hover {
+    background-color: transparent !important;
+    text-decoration: none;
+}
+
+/**************************************/
+
+
+.dropdown-menu {
+    height: 20vh;
+    background-color: #343a40;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.dropdown-item {
+    color: #cecece;
+}
+
+.dropdown-item:hover {
+    background-color: #747474;
+    color: #ededed;
+} 
+
+.dropdown-menu::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+button, button:focus, button.click {
+    border: none;
+    outline: none;
+}
+
+.pricewunit {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 1.2px;
+}
+
+.pricesymbol {
+    display: flex;
+    align-items: stretch;
+    font-size: 0.7rem;
+    font-weight: 400;
 }
 
 @media (min-width: 1015px) {
@@ -340,5 +399,8 @@ a:hover {
     }
     .convert {
         margin-bottom: 10px;
+    }
+    .idea {
+        font-size: 1rem;
     }
 }
