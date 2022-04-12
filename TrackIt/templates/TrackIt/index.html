@@ -9,7 +9,7 @@
             <div>{{ message }}</div>
         {% endif %}
 
-        <form class="form-login" action="{% url 'login' %}" method="post">
+        <form class="form-login" method="post">
             {% csrf_token %}
             <div class="form-group">
                 <input autofocus class="form-control bg-dark" type="email" name="email" placeholder="Email">
@@ -31,7 +31,7 @@
             <div>{{ message }}</div>
         {% endif %}
 
-        <form class="form-register" action="{% url 'register' %}" method="post">
+        <form class="form-register" method="post">
             {% csrf_token %}
             <div class="form-group">
                 <input class="form-control bg-dark" type="email" name="email" placeholder="Email Address">
@@ -156,7 +156,7 @@
             <div class="currencyprices">
                 <!-- currency item -->
                 <div class="currencyitem">
-                    <div class="currencynames">
+                    <div class="currencynames" data-USD>
                         <div class="currencyname" data-USD>U.S. Dollars</div>
                         <div class="currencysymbol" data-USD>USD</div>
                     </div>
@@ -174,7 +174,7 @@
                 </div>
                 <!-- currency item -->
                 <div class="currencyitem">
-                    <div class="currencynames">
+                    <div class="currencynames" data-EUR>
                         <div class="currencyname" data-EUR>European Euro</div>
                         <div class="currencysymbol" data-EUR>EUR</div>
                     </div>
@@ -192,7 +192,7 @@
                 </div>
                 <!-- currency item -->
                 <div class="currencyitem">
-                    <div class="currencynames">
+                    <div class="currencynames" data-JPY>
                         <div class="currencyname" data-JPY>Japanese Yen</div>
                         <div class="currencysymbol" data-JPY>JPY</div>
                     </div>
@@ -210,9 +210,9 @@
                 </div>
                 <!-- currency item -->
                 <div class="currencyitem">
-                    <div class="currencynames">
+                    <div class="currencynames" data-GBP>
                         <div class="currencyname" data-GBP>British Pound</div>
-                        <div class="currencysymbol" data-GBP>JPY</div>
+                        <div class="currencysymbol" data-GBP>GBP</div>
                     </div>
                     <div class="currencypricedata">
                         <div class="currencyprice" data-GBP></div>
@@ -228,7 +228,7 @@
                 </div>
                 <!-- currency item -->
                 <div class="currencyitem">
-                    <div class="currencynames">
+                    <div class="currencynames" data-CHF>
                         <div class="currencyname" data-CHF>Swiss Franc</div>
                         <div class="currencysymbol" data-CHF>CHF</div>
                     </div>

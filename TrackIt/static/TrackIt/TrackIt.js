@@ -129,13 +129,6 @@ async function getCurrencyPrice(currency, preference) {
     let currencyData = await fetch(`https://api.coinbase.com/v2/exchange-rates?currency=${currency}`);
     currencyData = await currencyData.json();
 	return currencyData.data.rates[preference];
-    // .then(response => response.json())
-        // .then(data => {
-        //     if (data.data.rates.USD !== currencyPrice) {
-        //         console.log(data.data.rates.USD);
-        //         currencyPrice = data.data.rates.USD;
-        //     }
-        // })
 }
 
 async function updateCurrencyPrice(currency, preference) {
