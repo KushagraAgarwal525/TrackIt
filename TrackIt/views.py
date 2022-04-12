@@ -82,8 +82,6 @@ def preference(request):
             return JsonResponse({"status": 1})
     try:
         user = request.user
-        if (currencyPreferences.objects.filter(user=user).count() == 0):
-            return JsonResponse({"status": 1})
         pref = currencyPreferences.objects.get(user=user)
         return JsonResponse({"status": 0, "currency": pref.currency})
     except:
