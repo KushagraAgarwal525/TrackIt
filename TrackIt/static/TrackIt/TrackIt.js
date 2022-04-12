@@ -1,7 +1,8 @@
 // Use https://tvjs.io/ for graphs
 
-// ***----Update intervals for cryptocurrency prices----***
+const currencies = ["AFN","ALL","BTC","DZD","USD","EUR","AOA","XCD","ARS","AMD","AWG","AUD","AZN","BSD","BHD","BDT","BBD","BYN","BZD","XOF","BMD","BTN","BOB","BAM","BWP","BRL","BND","BGN","BIF","KHR","XAF","CAD","CVE","KYD","CLP","CNY","COP","KMF","CDF","NZD","CRC","HRK","CUP","CZK","DKK","DJF","DOP","EGP","ERN","SZL","ETB","FJD","XPF","GMD","GEL","GHS","GIP","GTQ","GNF","GYD","HTG","HNL","HKD","HUF","ISK","INR","IDR","IRR","IQD","ILS","JMD","JPY","JOD","KZT","KES","KPW","KRW","KWD","KGS","LAK","LBP","LSL","LRD","LYD","CHF","MOP","MGA","MWK","MYR","MVR","MRU","MUR","MXN","MDL","MNT","MAD","MZN","MMK","NAD","NPR","ANG","NIO","NGN","MKD","NOK","OMR","PKR","PAB","PGK","PYG","PEN","PHP","PLN","QAR","RON","RUB","RWF","SHP","WST","STN","SAR","RSD","SCR","SLL","SGD","SBD","SOS","ZAR","SSP","LKR","SDG","SRD","SEK","SYP","TJS","TZS","THB","TOP","TTD","TND","TRY","TMT","UGX","UAH","AED","GBP","UYU","UZS","VUV","VES","VND","YER","ZMW","ZWL"];
 
+// ***----Update intervals for cryptocurrency prices----***
 setInterval(() => {
     updateCryptoPrice("BTC", "USD");
 }, 1000);
@@ -46,12 +47,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateCryptoPrice("ETH", "USD");
     updateCryptoPrice("SOL", "USD");
     updateCryptoPrice("AVAX", "USD");
-    // updateCryptoPrice("ADA", "USD");
+    updateCryptoPrice("ADA", "USD");
 	updateCurrencyPrice("USD", "USD");
 	updateCurrencyPrice("EUR", "USD");
-	// updateCurrencyPrice("JPY", "USD");
-	// updateCurrencyPrice("USD", "USD");
-	// updateCurrencyPrice("USD", "USD");
+	updateCurrencyPrice("JPY", "USD");
+	updateCurrencyPrice("GBP", "USD");
+	updateCurrencyPrice("CHF", "USD");
+    const searchForm = document.querySelector(".convert form");
+    searchForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        let currencyFrom = searchForm.currencyfrom.value.toUpperCase();
+        let currencyTo = searchForm.currencyto.value.toUpperCase();
+        let exchange;
+        const result = document.querySelector(".convert .result");
+        if (currencies.includes(currencyFrom) && currencies.includes(currencyTo)) {
+            exchange = await getCurrencyPrice(currencyFrom, currencyTo);
+            exchange = parseFloat(exchange).toFixed(2);
+            result.style.display = "block";
+            result.textContent = `1 ${currencyFrom.toUpperCase()} = ${exchange} ${currencyTo.toUpperCase()}`;
+        }
+        else {
+            result.style.display = "block";
+            result.textContent = "INVALID INPUT!";
+        }
+    })
+    document.querySelector('.relaxbtn').addEventListener('click', async () => {
+        let idea = await fetch("http://www.boredapi.com/api/activity?type=relaxation");
+        idea = await idea.json();
+        document.querySelector('.idea').textContent = idea.activity;
+    })
 })
 
 async function getCryptoPrice(crypto, currency) {
@@ -112,16 +136,23 @@ async function updateCurrencyPrice(currency, preference) {
 		if (priceChange == Infinity) {
 			document.querySelector(`.currencychangepercentage[data-${currency}]`).textContent = "0.000%";
 		}
-		else if (priceChange < 0) {
-			document.querySelector(`.currencychangepercentage[data-${currency}]`).textContent = `${priceChange}%`;
+        else {
+			document.querySelector(`.currencychangepercentage[data-${currency}]`).textContent = `${percentagechange}%`;
+		}
+		if (priceChange < 0) {
+            document.querySelector(`svg[data-${currency}]`).classList.add("rotatesvg");
+			document.querySelector(`svg[data-${currency}]`).style.color = "red";
 			document.querySelector(`.currencychangepercentage[data-${currency}]`).style.color = "red";
 		}
 		else if (priceChange > 0 && priceChange != Infinity) {
-			document.querySelector(`.currencychangepercentage[data-${currency}]`).textContent = `${priceChange}%`;
 			document.querySelector(`.currencychangepercentage[data-${currency}]`).style.color = "#29EF04";
+            document.querySelector(`svg[data-${currency}]`).style.color = "#39FF14";
+			if (document.querySelector(`svg[data-${currency}]`).classList.contains("rotatesvg")) {
+				document.querySelector(`svg[data-${currency}]`).classList.remove("rotatesvg");
+			}
 		}
 		else if (priceChange == 0) {
-			document.querySelector(`.currencychangepercentage[data-${currency}]`).textContent = "0.000%";
+			document.querySelector(`svg[data-${currency}]`).style.color = "#eeeeee";
 			document.querySelector(`.currencychangepercentage[data-${currency}]`).style.color = "#eeeeee";
 		}
 		prices[currency] = priceData;

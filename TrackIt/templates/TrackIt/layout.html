@@ -10,7 +10,7 @@
     <title>{% block title %} TrackIt {% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'TrackIt/styles.css' %}">
-    {% block script %} <script src="{% static 'TrackIt/TrackIt.js' %}"></script> {% endblock %}
+    {% block script %}{% endblock %}
 </head>
 <body>
     <nav class="sticky-top navbar navbar-dark bg-dark">
@@ -18,10 +18,14 @@
             <a href="/" class="nav-item navbar-text logo-text">TrackIt</a>
         </div>
         <div class="nav-right">
-            <a href="/register"class="nav-item nav-link">
-                Register
-            </a>
-            <a href="/login" class="nav-item nav-link">Login</a>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'register' %}"class="nav-item nav-link">Register</a>
+                <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+            {% else %}
+                <a class="nav-item nav-link">Watchlist</a>
+                <a class="nav-item nav-link">Preferences</a>
+                <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+            {% endif %}
         </div>
     </nav>
     {% block body %} {% endblock %}

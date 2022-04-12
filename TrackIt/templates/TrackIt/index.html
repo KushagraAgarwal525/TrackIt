@@ -1,5 +1,9 @@
 {% extends 'TrackIt/layout.html' %}
 
+{% load static %}
+
+{% block script %}<script src="{% static 'TrackIt/TrackIt.js' %}"></script>{% endblock %}
+
 {% block body %}
     <!-- price display page -->
     <div class="prices">
@@ -117,7 +121,7 @@
                         <div class="currencyprice" data-USD></div>
                         <div class="currencypricechange">
                             <div class="currencychangearrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                <svg data-USD xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                                 </svg>
                             </div>
@@ -135,7 +139,7 @@
                         <div class="currencyprice" data-EUR></div>
                         <div class="currencypricechange">
                             <div class="currencychangearrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                <svg data-EUR xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                                 </svg>
                             </div>
@@ -153,7 +157,7 @@
                         <div class="currencyprice" data-JPY></div>
                         <div class="currencypricechange">
                             <div class="currencychangearrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                <svg data-JPY xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                                 </svg>
                             </div>
@@ -198,6 +202,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- search section -->
+    <div class="search">
+        <div class="searchtitle">Convert Currencies</div>
+        <div class="convert">
+            <form action="/search/" method="post">
+                <div class="input">
+                    <input type="text" name="currencyfrom" placeholder="From Currency (Symbol)">
+                    <input type="text" name="currencyto" placeholder="To Currency (Symbol)">
+                </div>
+                <input class="cryptosearchbtn" type="submit" name="submit" value="Convert">
+            </form>
+            <div class="result"></div>
+        </div>
+    </div>
+
+    <!-- Relax Ideas -->
+    <div class="relax">
+        <div class="relaxtitle">Want to Relax?</div>
+        <div class="getidea">
+            <div class="idea"></div>
+            <button class="relaxbtn">Relax</button>
         </div>
     </div>
 {% endblock %}
