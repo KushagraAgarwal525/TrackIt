@@ -422,7 +422,5 @@ button, button:focus, button.click {
     }
     .navbar {
         justify-content: center;
-        margin-right: auto;
-        margin-left: auto;
     }
 }
