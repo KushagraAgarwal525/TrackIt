@@ -130,7 +130,7 @@ async function updateCryptoPrice(crypto, currency) {
 	priceData = (parseFloat(priceData).toFixed(2)).toString();
 	let prices = sessionStorage.getItem("cryptoPrices");
     prices = JSON.parse(prices);
-    if (priceData !== prices) {
+    if (priceData !== prices[crypto]) {
         document.querySelector(`.cryptoprice[data-${crypto}]`).textContent = `${priceData}`;
 		let cryptoPercentageChange = ((parseFloat(priceData) - parseFloat(prices[crypto])) * 100.00/parseFloat(prices[crypto])).toFixed(3);
 		if (cryptoPercentageChange == Infinity) {
@@ -173,7 +173,7 @@ async function updateCurrencyPrice(currency, preference) {
 	priceData = (parseFloat(priceData).toFixed(2)).toString();
 	let prices = sessionStorage.getItem("currencyPrices");
     prices = JSON.parse(prices);
-	if (priceData !== prices) {
+	if (priceData !== prices[currency]) {
 		document.querySelector(`.currencyprice[data-${currency}]`).textContent = `${priceData}`;
 		let currencyPercentageChange = ((parseFloat(priceData) - parseFloat(prices[currency])) * 100/parseFloat(prices[currency])).toFixed(3);
 		if (currencyPercentageChange == Infinity) {
