@@ -1,5 +1,202 @@
 {% extends 'TrackIt/layout.html' %}
 
 {% block body %}
-
+    <div class="prices">
+        <!-- popular CryptoCurrency price block -->
+        <div class="crypto">
+            <!-- Title for the block -->
+            <div class="cryptotitle">Popular CryptoCurrencies</div>
+            <!-- CryptoCurrency price table -->
+            <div class="cryptoprices">
+                <!-- crpto item -->
+                <div class="cryptoitem">
+                    <div class="cryptonames" data-BTC>
+                        <div class="cryptoname" data-BTC>Bitcoin</div>
+                        <div class="cryptosymbol" data-BTC>BTC</div>
+                    </div>
+                    <div class="cryptopricedata">
+                        <div class="cryptoprice" data-BTC></div>
+                        <div class="cryptopricechange">
+                            <div class="pricechangearrow">
+                                <svg data-BTC xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="cryptochangepercentage" data-BTC></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- crpto item -->
+                <div class="cryptoitem">
+                    <div class="cryptonames" data-ETH>
+                        <div class="cryptoname" data-ETH>Ethereum</div>
+                        <div class="cryptosymbol" data-ETH>ETH</div>
+                    </div>
+                    <div class="cryptopricedata">
+                        <div class="cryptoprice" data-ETH></div>
+                        <div class="cryptopricechange">
+                            <div class="pricechangearrow">
+                                <svg data-ETH xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="cryptochangepercentage" data-ETH></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- crpto item -->
+                <div class="cryptoitem">
+                    <div class="cryptonames" data-SOL>
+                        <div class="cryptoname" data-SOL>Solana</div>
+                        <div class="cryptosymbol" data-SOL>SOL</div>
+                    </div>
+                    <div class="cryptopricedata">
+                        <div class="cryptoprice" data-SOL></div>
+                        <div class="cryptopricechange">
+                            <div class="pricechangearrow">
+                                <svg data-SOL xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="cryptochangepercentage" data-SOL></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- crpto item -->
+                <div class="cryptoitem">
+                    <div class="cryptonames" data-AVAX>
+                        <div class="cryptoname" data-AVAX>Avalanche</div>
+                        <div class="cryptosymbol" data-AVAX>AVAX</div>
+                    </div>
+                    <div class="cryptopricedata">
+                        <div class="cryptoprice" data-AVAX></div>
+                        <div class="cryptopricechange">
+                            <div class="pricechangearrow">
+                                <svg data-AVAX xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="cryptochangepercentage" data-AVAX></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- crpto item -->
+                <div class="cryptoitem">
+                    <div class="cryptonames" data-ADA>
+                        <div class="cryptoname" data-ADA>Cardano</div>
+                        <div class="cryptosymbol" data-ADA>ADA</div>
+                    </div>
+                    <div class="cryptopricedata">
+                        <div class="cryptoprice" data-ADA></div>
+                        <div class="cryptopricechange">
+                            <div class="pricechangearrow">
+                                <svg data-ADA xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="cryptochangepercentage" data-ADA></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- popular currency values in the preferred currency -->
+        <div class="currency">
+            <!-- title for the block -->
+            <div class="currencytitle">Popular Currencies</div>
+            <!-- currency price table -->
+            <div class="currencyprices">
+                <!-- currency item -->
+                <div class="currencyitem">
+                    <div class="currencynames">
+                        <div class="currencyname" data-USD>U.S. Dollars</div>
+                        <div class="currencysymbol" data-USD>USD</div>
+                    </div>
+                    <div class="currencypricedata">
+                        <div class="currencyprice" data-USD></div>
+                        <div class="currencypricechange">
+                            <div class="currencychangearrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="currencychangepercentage" data-USD></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- currency item -->
+                <div class="currencyitem">
+                    <div class="currencynames">
+                        <div class="currencyname" data-EUR>European Euro</div>
+                        <div class="currencysymbol" data-EUR>EUR</div>
+                    </div>
+                    <div class="currencypricedata">
+                        <div class="currencyprice" data-EUR></div>
+                        <div class="currencypricechange">
+                            <div class="currencychangearrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="currencychangepercentage" data-EUR></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- currency item -->
+                <div class="currencyitem">
+                    <div class="currencynames">
+                        <div class="currencyname" data-JPY>Japanese Yen</div>
+                        <div class="currencysymbol" data-JPY>JPY</div>
+                    </div>
+                    <div class="currencypricedata">
+                        <div class="currencyprice" data-JPY></div>
+                        <div class="currencypricechange">
+                            <div class="currencychangearrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="currencychangepercentage" data-JPY></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- currency item -->
+                <div class="currencyitem">
+                    <div class="currencynames">
+                        <div class="currencyname" data-GBP>British Pound</div>
+                        <div class="currencysymbol" data-GBP>JPY</div>
+                    </div>
+                    <div class="currencypricedata">
+                        <div class="currencyprice" data-GBP></div>
+                        <div class="currencypricechange">
+                            <div class="currencychangearrow">
+                                <svg data-GBP xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="currencychangepercentage" data-GBP></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- currency item -->
+                <div class="currencyitem">
+                    <div class="currencynames">
+                        <div class="currencyname" data-CHF>Swiss Franc</div>
+                        <div class="currencysymbol" data-CHF>CHF</div>
+                    </div>
+                    <div class="currencypricedata">
+                        <div class="currencyprice" data-CHF></div>
+                        <div class="currencypricechange">
+                            <div class="currencychangearrow">
+                                <svg data-CHF xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                            </div>
+                            <div class="currencychangepercentage" data-CHF></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

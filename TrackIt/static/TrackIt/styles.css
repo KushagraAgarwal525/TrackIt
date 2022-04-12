@@ -1,3 +1,12 @@
+:root {
+    --bitcoin-color : #f7931a;
+    --ethereum-color : #00b7ff;
+    --solana-color : #DC1FFF;
+    --avalanche-color : #e84142;
+    --cardano-color : #00A1FF;
+    /* #2a71d0 */
+}
+
 body {
     background-color: #151515;
     color: #eee;
@@ -33,12 +42,89 @@ a:hover {
     justify-content: center;
     gap: 20px;
     color: #dfdfdf;
+    padding: 15px 40px;
 }
 
 .form-login .form-group input, .form-register .form-group input {
     border: 1px solid black;
     caret-color: #aaa;
     color: #ccc;
+}
+
+.form-control:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #555; 
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.cryptotitle, .currencytitle {
+    font-size: large;
+    text-align: center;
+    font-weight: 400;
+    padding: 8px 0px;
+    color: #cecece;
+}
+
+.crypto, .currency {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%;
+}
+
+.cryptoprices, .currencyprices {
+    border-radius: 5px;
+    background-color: #343a40;
+    padding: 15px;
+}
+
+.cryptoitem, .currencyitem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cryptopricechange, .currencypricechange {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cryptopricedata, .currencypricedata {
+    text-align: right;
+}
+
+.rotatesvg {
+    transform: rotate(180deg);
+}
+
+.cryptoname, .currencyname {
+    font-weight: bold;
+
+}
+
+.cryptonames[data-BTC] {
+    color: var(--bitcoin-color);
+}
+
+.cryptonames[data-ETH] {
+    color: var(--ethereum-color);
+}
+
+.cryptonames[data-SOL] {
+    color: var(--solana-color);
+}
+
+.cryptonames[data-AVAX] {
+    color: var(--avalanche-color);
+}
+
+.cryptonames[data-ADA] {
+    color: var(--cardano-color);
 }
 
 @media (min-width: 1000px) {
@@ -54,5 +140,36 @@ a:hover {
 
     .login, .register {
         padding: 25px 50px;
+    }
+
+    .prices {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 40px;
+        padding: 80px 200px;
+    }
+
+    .crypto, .currency {
+        width: 50%;
+    }
+
+    .cryptoprices, .currencyprices {
+        padding: 30px;
+    }
+
+    
+    .cryptotitle, .currencytitle {
+        font-size: x-large;
+        font-weight: 500;
+        padding: 8px 0px;
+    }
+}
+
+@media (max-width: 350px) {
+    .prices {
+        padding: 20px;
+    }
+    .crypto, .currency {
+        width: 100%;
     }
 }
