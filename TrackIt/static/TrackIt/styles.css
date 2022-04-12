@@ -22,6 +22,13 @@ body {
     justify-content: space-between;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 .nav-item {
     color: #dfdfdf !important;
 }
@@ -32,6 +39,7 @@ a:hover {
 
 .nav-link {
     display: inline;
+    padding: 0px;
 }
 
 .logo-text {
@@ -322,6 +330,9 @@ button, button:focus, button.click {
     .navbar {
         padding: 8px 20px;
     }
+    .nav-right {
+        margin-right: 20px;
+    }
     .logo-text {
         font-size: x-large !important;
     }
@@ -369,9 +380,15 @@ button, button:focus, button.click {
     .getidea {
         gap: 20px;
     }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 359px) {
     .prices {
         padding: 20px;
     }
@@ -402,5 +419,10 @@ button, button:focus, button.click {
     }
     .idea {
         font-size: 1rem;
+    }
+    .navbar {
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
