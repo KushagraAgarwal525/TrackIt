@@ -5,7 +5,7 @@ A single page web-application to track ***cryptocurrencies*** and ***fiat curren
 
 ## What
 
-- Track prices of ***crpytocurrencies*** and ***fiat currencies***.
+- Track prices of ***cryptocurrencies*** and ***fiat currencies***.
 - Convert ***currency*** prices.
 - TrackIt gives users the option to login to use some additional features like ***Currency Preferences*** to display all price data in the preferred currency.
 - Find a way to ***relax*** after an exhausting day.
@@ -13,15 +13,15 @@ A single page web-application to track ***cryptocurrencies*** and ***fiat curren
 
 ## How
 
-TrackIt uses a *Coinbase* API to get quotes on all currencies which returns data in JSON. The application uses that data to display the correct information as required by the user. TrackIt also makes use of *Session Storage* to keep track of previous prices of different currencies to calculate percentage change. To keep track of *Currency Preferences* for differect users, a django model is used to store *User Preferences*.
+TrackIt uses a *Coinbase* API to get quotes on all currencies which returns data in JSON. The application uses that data to display the correct information as required by the user. TrackIt also makes use of *Session Storage* to keep track of previous prices of different currencies to calculate percentage change. To keep track of *Currency Preferences* for different users, a django model is used to store *User Preferences*.
 TrackIt uses *bored* API for ideas to relax.
 
 ## Distinctiveness and Complexity
 
 TrackIt is clearly distinct from all the other projects visited in the course.
-It touches a different scope or a use case for django based web applications. What makes it truly distinct is the use of external API to get *real-time* data. The structure of the returned data is to be understood to be nicely able to make use of the API.
+It touches on a different scope or a use case for django based web applications. What makes it truly distinct is the use of external API to get *real-time* data. The structure of the returned data is to be understood to be nicely able to make use of the API.
 
-TrackIt is a fairly complex application since structure and endpoints of the API is to be understood. Along with that, the application makes *approx. 10 requests* every second to the CoinBase API to update the displayed data. The requests are managed effectively and concisely by making use of structured functions.  The API makes use of *Intervals, Sessions Storage, async, await* most of which were not necessarily used in the projects explored in the course. All of the requests to CoinBase and the TrackIt API are *asynchronous* making it more complex. The application also uses *media queries* to make the application mobile-responsive with *precision in UI*.
+TrackIt is a fairly complex application since the structure and endpoints of the API are to be understood. Along with that, the application makes *approx. 10 requests* every second to the CoinBase API to update the displayed data. The requests are managed effectively and concisely by making use of structured functions.  The API makes use of *Intervals, Sessions Storage, async, await* most of which were not necessarily used in the projects explored in the course. All of the requests to CoinBase and the TrackIt API are *asynchronous* making it more complex. The application also uses *media queries* to make the application mobile-responsive with *precision in UI*.
 
 ## Files
 
@@ -35,7 +35,7 @@ TrackIt is a fairly complex application since structure and endpoints of the API
 
 - ### Templates
 	-	index.html
-		- Contains *popular currency display, currency conversion* and *relax* divs.
+		- Contains *popular currency display, currency conversion* ,and *relax* divs.
 	- layout.html
 		- Contains *basic layout* for the web-application.
 			- head
@@ -63,7 +63,7 @@ TrackIt is a fairly complex application since structure and endpoints of the API
 		- register
 		- preference
 - ### <span>models.py</span>
-	- Contains *User*, *WatchList* and *currencyPreferences* model
+	- Contains *User*, *WatchList* ,and *currencyPreferences* model
 
 ## How to Run TrackIt
 
